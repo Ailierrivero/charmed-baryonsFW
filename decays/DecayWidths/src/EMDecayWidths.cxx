@@ -28,6 +28,7 @@ double EMDecayWidths::execute(double ma_val, double sa_val, double ja_val, doubl
   MA = ma_val;
   MB = mb_val;  
   if(MA<MB) return 0.; //energy conservation
+  if(MA>3.100) return 0.;
 
   // quark masses
   mcharm = mcharm_val;
