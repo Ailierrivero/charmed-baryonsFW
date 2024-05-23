@@ -61,131 +61,131 @@ def state_labels(baryon, ModEx, decPr, L_tot):
         if(baryon==5):
             baryon_name = 'cas_3'
         if(decPr==101):
-            decPr_name = "Xi0+gamma"
+            decPr_name = "Xi+ +gamma"
         elif(decPr==102):
-            decPr_name = "Xi-+gamma"
+            decPr_name = "Xi0 +gamma"
         elif(decPr==103):
-            decPr_name = "Xi'0+gamma"
+            decPr_name = "Xi'+ +gamma"
         elif(decPr==104):
-            decPr_name = "Xi*0+gamma"
+            decPr_name = "Xi*+ +gamma"
         elif(decPr==105):
-            decPr_name = "Xi'-+gamma"
+            decPr_name = "Xi'0 +gamma"
         elif(decPr==106):
-            decPr_name = "Xi*-+gamma"
+            decPr_name = "Xi*0 +gamma"
         elif(decPr==201):
-            decPr_name = "Xi0 2p1/2-lam+gamma"
+            decPr_name = "Xi+ 2p1/2-lam+gamma"
         elif(decPr==202):
-            decPr_name = "Xi0 2p3/2-lam+gamma"
+            decPr_name = "Xi+ 2p3/2-lam+gamma"
         elif(decPr==203):
-            decPr_name = "Xi0 2p1/2-rho+gamma"
+            decPr_name = "Xi+ 2p1/2-rho+gamma"
         elif(decPr==204):
-            decPr_name = "Xi0 4p1/2-rho+gamma"
+            decPr_name = "Xi+ 4p1/2-rho+gamma"
         elif(decPr==205):
-            decPr_name = "Xi0 2p3/2-rho+gamma"
+            decPr_name = "Xi+ 2p3/2-rho+gamma"
         elif(decPr==206):
-            decPr_name = "Xi0 4p3/2-rho+gamma"
+            decPr_name = "Xi+ 4p3/2-rho+gamma"
         elif(decPr==207):
-            decPr_name = "Xi0 4p5/2-rho+gamma"
+            decPr_name = "Xi+ 4p5/2-rho+gamma"
         elif(decPr==208):
-            decPr_name = "Xi- 2p1/2-lam+gamma"
+            decPr_name = "Xi0 2p1/2-lam+gamma"
         elif(decPr==209):
-            decPr_name = "Xi- 2p3/2-lam+gamma"
+            decPr_name = "Xi0 2p3/2-lam+gamma"
         elif(decPr==210):
-            decPr_name = "Xi- 2p1/2-rho+gamma"
+            decPr_name = "Xi0 2p1/2-rho+gamma"
         elif(decPr==211):
-            decPr_name = "Xi- 4p1/2-rho+gamma"
+            decPr_name = "Xi0 4p1/2-rho+gamma"
         elif(decPr==212):
-            decPr_name = "Xi- 2p3/2-rho+gamma"
+            decPr_name = "Xi0 2p3/2-rho+gamma"
         elif(decPr==213):
-            decPr_name = "Xi- 4p3/2-rho+gamma"
+            decPr_name = "Xi0 4p3/2-rho+gamma"
         elif(decPr==214):
-            decPr_name = "Xi- 4p5/2-rho+gamma"
+            decPr_name = "Xi0 4p5/2-rho+gamma"
         elif(decPr==215):
-            decPr_name = "Xi'0 2p1/2-lam+gamma"
+            decPr_name = "Xi'+ 2p1/2-lam+gamma"
         elif(decPr==216):
-            decPr_name = "Xi'0 4p1/2-lam+gamma"
+            decPr_name = "Xi'+ 4p1/2-lam+gamma"
         elif(decPr==217):
-            decPr_name = "Xi'0 2p3/2-lam+gamma"
+            decPr_name = "Xi'+ 2p3/2-lam+gamma"
         elif(decPr==218):
-            decPr_name = "Xi'0 4p3/2-lam+gamma"
+            decPr_name = "Xi'+ 4p3/2-lam+gamma"
         elif(decPr==219):
-            decPr_name = "Xi'0 4p5/2-lam+gamma"
+            decPr_name = "Xi'+ 4p5/2-lam+gamma"
         elif(decPr==220):
-            decPr_name = "Xi'0 2p1/2-rho+gamma"
+            decPr_name = "Xi'+ 2p1/2-rho+gamma"
         elif(decPr==221):
-            decPr_name = "Xi'0 2p3/2-rho+gamma"
+            decPr_name = "Xi'+ 2p3/2-rho+gamma"
         elif(decPr==222):
-            decPr_name = "Xi'- 2p1/2-lam+gamma"
+            decPr_name = "Xi'0 2p1/2-lam+gamma"
         elif(decPr==223):
-            decPr_name = "Xi'- 4p1/2-lam+gamma"
+            decPr_name = "Xi'0 4p1/2-lam+gamma"
         elif(decPr==224):
-            decPr_name = "Xi'- 2p3/2-lam+gamma"
+            decPr_name = "Xi'0 2p3/2-lam+gamma"
         elif(decPr==225):
-            decPr_name = "Xi'- 4p3/2-lam+gamma"
+            decPr_name = "Xi'0 4p3/2-lam+gamma"
         elif(decPr==226):
-            decPr_name = "Xi'- 4p5/2-lam+gamma"
+            decPr_name = "Xi'0 4p5/2-lam+gamma"
         elif(decPr==227):
-            decPr_name = "Xi'- 2p1/2-rho+gamma"
+            decPr_name = "Xi'0 2p1/2-rho+gamma"
         elif(decPr==228):
-            decPr_name = "Xi'- 2p3/2-rho+gamma"
+            decPr_name = "Xi'0 2p3/2-rho+gamma"
     elif(baryon==3):
         baryon_name = "sigma"
         if(decPr==101):
-            decPr_name = "Sig+ +gamma"
+            decPr_name = "Sig++ +gamma"
         elif(decPr==102):
-            decPr_name = "Sig*+ +gamma"
+            decPr_name = "Sig*++ +gamma"
         elif(decPr==103):
-            decPr_name = "Sig0+gamma"
+            decPr_name = "Sig+ +gamma"
         elif(decPr==104):
-            decPr_name = "Sig*0+gamma" 
+            decPr_name = "Sig*+ +gamma" 
         elif(decPr==105):
-            decPr_name = "Sig- +gamma"
+            decPr_name = "Sig0 +gamma"
         elif(decPr==106):
-            decPr_name = "Sig*- +gamma"
+            decPr_name = "Sig*0 +gamma"
         elif(decPr==107):
-            decPr_name = "Lamb0+gamma"
+            decPr_name = "Lamb+ +gamma"
         elif(decPr==201):
-            decPr_name = "Sig+ 2p1/2-lam+gamma"
+            decPr_name = "Sig++ 2p1/2-lam+gamma"
         elif(decPr==202):
-            decPr_name = "Sig+ 4p1/2-lam+gamma"
+            decPr_name = "Sig++ 4p1/2-lam+gamma"
         elif(decPr==203):
-            decPr_name = "Sig+ 2p3/2-lam+gamma"
+            decPr_name = "Sig++ 2p3/2-lam+gamma"
         elif(decPr==204):
-            decPr_name = "Sig+ 4p3/2-lam+gamma"
+            decPr_name = "Sig++ 4p3/2-lam+gamma"
         elif(decPr==205):
-            decPr_name = "Sig+ 4p5/2-lam+gamma"
+            decPr_name = "Sig++ 4p5/2-lam+gamma"
         elif(decPr==206):
-            decPr_name = "Sig+ 2p1/2-rho+gamma"
+            decPr_name = "Sig++ 2p1/2-rho+gamma"
         elif(decPr==207):
-            decPr_name = "Sig+ 2p3/2-rho+gamma"
+            decPr_name = "Sig++ 2p3/2-rho+gamma"
         elif(decPr==208):
-            decPr_name = "Sig0 2p1/2-lam+gamma"
+            decPr_name = "Sig+ 2p1/2-lam+gamma"
         elif(decPr==209):
-            decPr_name = "Sig0 4p1/2-lam+gamma"
+            decPr_name = "Sig+ 4p1/2-lam+gamma"
         elif(decPr==210):
-            decPr_name = "Sig0 2p3/2-lam+gamma"
+            decPr_name = "Sig+ 2p3/2-lam+gamma"
         elif(decPr==211):
-            decPr_name = "Sig0 4p3/2-lam+gamma"
+            decPr_name = "Sig+ 4p3/2-lam+gamma"
         elif(decPr==212):
-            decPr_name = "Sig0 4p5/2-lam+gamma"
+            decPr_name = "Sig+ 4p5/2-lam+gamma"
         elif(decPr==213):
-            decPr_name = "Sig0 2p1/2-rho+gamma"
+            decPr_name = "Sig+ 2p1/2-rho+gamma"
         elif(decPr==214):
-            decPr_name = "Sig0 2p3/2-rho+gamma"
+            decPr_name = "Sig+ 2p3/2-rho+gamma"
         elif(decPr==215):
-            decPr_name = "Sig- 2p1/2-lam+gamma"
+            decPr_name = "Sig0 2p1/2-lam+gamma"
         elif(decPr==216):
-            decPr_name = "Sig- 4p1/2-lam+gamma"
+            decPr_name = "Sig0 4p1/2-lam+gamma"
         elif(decPr==217):
-            decPr_name = "Sig- 2p3/2-lam+gamma"
+            decPr_name = "Sig0 2p3/2-lam+gamma"
         elif(decPr==218):
-            decPr_name = "Sig- 4p3/2-lam+gamma"
+            decPr_name = "Sig0 4p3/2-lam+gamma"
         elif(decPr==219):
-            decPr_name = "Sig- 4p5/2-lam+gamma"
+            decPr_name = "Sig0 4p5/2-lam+gamma"
         elif(decPr==220):
-            decPr_name = "Sig- 2p1/2-rho+gamma"
+            decPr_name = "Sig0 2p1/2-rho+gamma"
         elif(decPr==221):
-            decPr_name = "Sig- 2p3/2-rho+gamma"
+            decPr_name = "Sig0 2p3/2-rho+gamma"
         elif(decPr==222):
             decPr_name = "Lam 2p1/2-lam+gamma"
         elif(decPr==223):
@@ -204,11 +204,11 @@ def state_labels(baryon, ModEx, decPr, L_tot):
     elif(baryon==4):
         baryon_name = 'lambda'
         if(decPr==101):
-            decPr_name = "Lamb0+gamma"
+            decPr_name = "Lamb+ +gamma"
         elif(decPr==102):
-            decPr_name = "Sig0+gamma"
+            decPr_name = "Sig+ +gamma"
         elif(decPr==103):
-            decPr_name = "Sig*0+gamma"
+            decPr_name = "Sig*+ +gamma"
         elif(decPr==201):
             decPr_name = "Lam 2p1/2-lam+gamma"
         elif(decPr==202):
@@ -224,19 +224,19 @@ def state_labels(baryon, ModEx, decPr, L_tot):
         elif(decPr==207):
             decPr_name = "Lam 4p5/2-rho+gamma"
         elif(decPr==208):
-            decPr_name = "Sig0 2p1/2-lam+gamma"
+            decPr_name = "Sig+ 2p1/2-lam+gamma"
         elif(decPr==209):
-            decPr_name = "Sig0 4p1/2-lam+gamma"
+            decPr_name = "Sig+ 4p1/2-lam+gamma"
         elif(decPr==210):
-            decPr_name = "Sig0 2p3/2-lam+gamma"
+            decPr_name = "Sig+ 2p3/2-lam+gamma"
         elif(decPr==211):
-            decPr_name = "Sig0 4p3/2-lam+gamma"
+            decPr_name = "Sig+ 4p3/2-lam+gamma"
         elif(decPr==212):
-            decPr_name = "Sig0 4p5/2-lam+gamma"
+            decPr_name = "Sig+ 4p5/2-lam+gamma"
         elif(decPr==213):
-            decPr_name = "Sig0 2p1/2-rho+gamma"
+            decPr_name = "Sig+ 2p1/2-rho+gamma"
         elif(decPr==214):
-            decPr_name = "Sig0 2p3/2-rho+gamma"
+            decPr_name = "Sig+ 2p3/2-rho+gamma"
     
     if(ModEx==0):
         ModEx_name ='Ground'
