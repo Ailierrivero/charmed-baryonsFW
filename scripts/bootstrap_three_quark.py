@@ -267,8 +267,8 @@ else:
 # calculate masses and widths using the bootstraped fitted parameters
 results = CharmThreeQuark(baryons=run_baryons, params=param, sampled=sampled, corr_mat=corr_mat_ext, asymmetric=asymmetric,
                            decay_width=decay_width, bootstrap_width=bootstrap_width, decay_width_em=decay_width_em, bootstrap_width_em=bootstrap_width_em, batch_number=batch_number, workpath=workpath)
-print(results)
-input()
+#print(results)
+#input()
 
 results.fetch_values()
 results.paper_results_predictions(bootstrap=bootstrap, bootstrap_width=bootstrap_width, prev_params=prev_params)
