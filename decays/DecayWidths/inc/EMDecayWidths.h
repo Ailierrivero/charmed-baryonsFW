@@ -15,11 +15,11 @@ class EMDecayWidths{
   virtual double execute(double ma_val, double sa_val, double ja_val, double la_val, double sla_val, double lla_val, double lra_val,
 			 double mb_val,
 			 double al_val, double ar_val,
-			 double mbottom_val, double mupdown_val, double mstrange_val,
+			 double mcharm_val, double mupdown_val, double mstrange_val,
 			 int baryon, int excMode, int prodDecay);
 
  private:
-  double MA; double MB; double MC; double mbottom; double mupdown; double mstrange; double mlight;
+  double MA; double MB; double MC; double mcharm; double mupdown; double mstrange; double mlight;
   int modeExcitation=0;
   double pi_val = 3.1415926536;
 
@@ -170,126 +170,126 @@ class EMDecayWidths{
 
   // Definitions of the Integrals and Tensor Operators for decays from D-wave lambda to P-wave lambda
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double T1_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho,double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho,double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double SPINFLIP_U1_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_l2_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_l2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_l2_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double T1_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho,double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho,double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_l2_m2_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_l2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_l2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
 
   // Definitions of the Integrals and Tensor Operators for decays from D-wave rho to P-wave rho
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r2_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r2_m1m_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r2_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r2_m1m_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r2_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r2_m1m_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r2_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r2_m1m_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_r2_m1_r1_m1();
   virtual double SPINFLIP_U3_r2_m0_r1_m0();
   virtual double SPINFLIP_U3_r2_m1m_r1_m1m();
   
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r2_m2_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho,double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m2_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho,double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r2_m2_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho,double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m2_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho,double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r2_m2_r1_m1();
   virtual double T3_r2_m1_r1_m0();
   virtual double T3_r2_m0_r1_m1m();
 
   //Definitions of the Integrals and Tensor Operators for decays from D-wave lambda to P-wave rho
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_l2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_l2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_l2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_l2_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_l2_m0_r1_m0();
-  virtual double T1_l2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_l2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_l2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_l2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_l2_m0_r1_m1m();
   virtual double T3_l2_m1_r1_m0();
 
   //Definitions of the Integrals and Tensor Operators for decays from D-wave rho to P-wave lambda
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r2_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_r2_m0_l1_m0();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r2_m0_l1_m1m();
   virtual double T3_r2_m1_l1_m0();
 
   //Definitions of the Integrals and Tensor Operators for decays from Mixed to P-wave rho
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_r1_m1_l1_m0_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_r1_m0_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_r1_m1m_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r1_m0_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m0_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r1_m0_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m0_l1_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r1_m0_l1_m0_r1_m1m();
   virtual double T3_r1_m1_l1_m0_r1_m0();
-  virtual double T3_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T3_r1_m1_l1_m1_r1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_r1_m0_l1_m1_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_r1_m1_ml_1m_1r_1m_1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
 
   //Definitions of the Integrals and Tensor Operators for decays from Mixed to P-wave lambda
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r1_m0_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r1_m0_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U1_r1_m0_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m0_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m0_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m0_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r1_m0_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r1_m0_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U1_r1_m0_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m0_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m0_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m0_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_r1_m0_l1_m1_l1_m1();
   virtual double SPINFLIP_U3_r1_m0_l1_m0_l1_m0();
   virtual double SPINFLIP_U3_r1_m0_l1_m1m_l1_m1m();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r1_m0_l1_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m0_l1_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m1_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m0_l1_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m0_l1_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r1_m0_l1_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m0_l1_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m0_l1_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m0_l1_m1_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m1_l1_m1(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m1m_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r1_m0_l1_m0_l1_m1m();
   virtual double T3_r1_m0_l1_m1_l1_m0();
   virtual double T3_r1_m1_l1_m1_l1_m1();
@@ -298,94 +298,94 @@ class EMDecayWidths{
 
   //Definitions of the Integrals and Tensor Operators for decays from D-lambda to ground state
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_l2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_l2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
 
   //Definitions of the Integrals and Tensor Operators for decays from D-rho to ground state
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r2_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_r2_m0_GS();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r2_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r2_m1_GS();
 
   //Definitions of the Integrals and Tensor Operators for decays from Mixed to ground state
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_r1_m0_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_r1_m0_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_r1_m0_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_r1_m0_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_r1_m0_l1_m0_GS();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_r1_m1_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T1_r1_m0_l1_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m1_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_r1_m0_l1_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_r1_m1_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T1_r1_m0_l1_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m1_l1_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_r1_m0_l1_m1_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_r1_m1_l1_m0_GS();
   virtual double T3_r1_m0_l1_m1_GS();
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial lambda to ground state
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_nl1_l0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial rho to ground state
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nr1_r0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nr1_r0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nr1_r0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nr1_r0_m0_GS(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_nr1_r0_m0_GS();
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial lambda to P wave lambda
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U3_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U3_nl1_l0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T3_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T3_nl1_l0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial lambda to P wave rho
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nl1_l0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nl1_l0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nl1_l0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nl1_l0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_nl1_l0_m0_r1_m0();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_nl1_l0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_nl1_l0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_nl1_l0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_nl1_l0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_nl1_l0_m0_r1_m1m();
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial rho to P wave lambda
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nr1_r0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nr1_r0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nr1_r0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nr1_r0_m0_l1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_nr1_r0_m0_l1_m0();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_nr1_r0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_nr1_r0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_nr1_r0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_nr1_r0_m0_l1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_nr1_r0_m0_l1_m1m();
 
   //Definitions of the Integrals and Tensor Operators for decays from Radial rho to P rho
   // SPIN-FLIP INTEGRALS
-  virtual double SPINFLIP_U1_nr1_r0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
-  virtual double SPINFLIP_U2_nr1_r0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight);
+  virtual double SPINFLIP_U1_nr1_r0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
+  virtual double SPINFLIP_U2_nr1_r0_m0_r1_m0(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight);
   virtual double SPINFLIP_U3_nr1_r0_m0_r1_m0();
 
   // ORBIT-FLIP Tensor operators
-  virtual double T1_nr1_r0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
-  virtual double T2_nr1_r0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mbottom, double mlight, double thetak, double phik);
+  virtual double T1_nr1_r0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
+  virtual double T2_nr1_r0_m0_r1_m1m(double k_value, double alpha_lam, double alpha_rho, double mcharm, double mlight, double thetak, double phik);
   virtual double T3_nr1_r0_m0_r1_m1m();
 
 
@@ -507,13 +507,13 @@ extern "C"{
   double electro_execute(double ma_val, double sa_val, double ja_val, double la_val, double sla_val, double lla_val, double lra_val,
 			 double mb_val,
 			 double al_val, double ar_val,
-			 double mbottom_val,  double mupdown_val, double mstrange_val,
+			 double mcharm_val,  double mupdown_val, double mstrange_val,
 			 int baryon, int excMode, int prodDecay){
     EMDecayWidths *m_decays = new EMDecayWidths();
     return m_decays->execute(ma_val, sa_val, ja_val, la_val, sla_val, lla_val, lra_val,
 			     mb_val,
 			     al_val, ar_val,
-			     mbottom_val, mupdown_val, mstrange_val,
+			     mcharm_val, mupdown_val, mstrange_val,
 			     baryon, excMode, prodDecay);
   }
 }
