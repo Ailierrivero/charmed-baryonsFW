@@ -16,7 +16,7 @@ from scipy.stats import norm
 import pandas as pd
 # framework includes
 from charmfw.common import data_utils as du
-from charmfw.baryons import bottom_states as bs
+from charmfw.baryons import charm_states as cs
     
 
 def plot(sample,name,xlabel,quark, states, workpath='.'):
@@ -53,9 +53,9 @@ def paper_tables_results(baryons, di_three_quark='diquark', decay_width=False,
         if batch_number is not None:
             di_label = '_diquark'  
         # get the original quantum numbers and experimental data
-        state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = bs.states_mass_diquark(baryons)
+        state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = cs.states_mass_diquark(baryons)
     else:
-        state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = bs.states_mass(baryons)
+        state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = cs.states_mass(baryons)
         
     if batch_number is None:
         masses_df = pd.read_csv(workpath + "/tables/masses_states_" + di_label + baryons + ".csv")
@@ -67,6 +67,8 @@ def paper_tables_results(baryons, di_three_quark='diquark', decay_width=False,
         df_from_each_file = (pd.read_csv(f) for f in all_files)
         masses_df = pd.concat(df_from_each_file, ignore_index=True)
         if decay_width and di_three_quark!='diquark':
+            print(workpath+"/batch_results"+di_label+"/"+baryons+"/decay_states/")
+            input()
             all_files = glob.glob(os.path.join(workpath+"/batch_results"+di_label+"/"+baryons+"/decay_states/", "*.csv"))
             df_from_each_file = (pd.read_csv(f) for f in all_files)
             decays_df = pd.concat(df_from_each_file, ignore_index=True)
@@ -147,7 +149,7 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
     if not os.path.exists(workpath+"/tables/"):
         os.mkdir(workpath+"/tables/")
     f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_summary.csv', "w")    
-    state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = bs.states_mass(baryons)
+    state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = cs.states_mass(baryons)
 
     if baryons == "omegas" or baryons=="sigmas" or baryons=="cascades":            
         n_states = 9 # we only have up to P-wave states for electro CHECK!!

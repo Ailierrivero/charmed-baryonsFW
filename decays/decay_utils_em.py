@@ -278,53 +278,53 @@ def latex_decay_label(baryon, decPr):
     if(baryon==1 or baryon=='omegas'):
         baryon_name = "omega"
         if(decPr==1):
-            decPr_name = ("$\Omega_{b} \gamma$", xi_mass)
+            decPr_name = ("$\Omega_{c} \gamma$", xi_mass)
         elif(decPr==2):                                                                         
-            decPr_name = ("$\Omega^{*}_{b} \gamma$", xi_p_mass)
+            decPr_name = ("$\Omega^{*}_{c} \gamma$", xi_p_mass)
         else:                                                                     
-            decPr_name = ("$\Omega^{*}_{b} \gamma$", xi_p_mass)
+            decPr_name = ("$\Omega^{*}_{c} \gamma$", xi_p_mass)
 
     elif(baryon==2 or baryon==5 or baryon=='cascades' or baryon=='cascades_anti3'):
         if(baryon==2): baryon_name = 'cas_6'
         if(baryon==5): baryon_name = 'cas_3'        
         if(decPr==1):
-            decPr_name = ("$\Xi_{b}^{0} \gamma$", xi_mass)
+            decPr_name = ("$\Xi_{c}^{0} \gamma$", xi_mass)
         elif(decPr==2):             
-            decPr_name = ("$\Xi_{b}^{-} \gamma$", xi_mass)
+            decPr_name = ("$\Xi_{c}^{+} \gamma$", xi_mass)
         elif(decPr==3):                                                                                           
-            decPr_name = ("$\Xi'^{0}_{b} \gamma$", xi_p_mass)
+            decPr_name = ("$\Xi'^{0}_{c} \gamma$", xi_p_mass)
         elif(decPr==4):                                                                                           
-            decPr_name = ("$\Xi'^{-}_{b} \gamma$", xi_p_mass)
+            decPr_name = ("$\Xi'^{+}_{c} \gamma$", xi_p_mass)
         elif(decPr==5):                                                                                           
-            decPr_name = ("$\Xi'^{*0}_{b} \gamma$", xi_p_s_mass)
+            decPr_name = ("$\Xi'^{*0}_{c} \gamma$", xi_p_s_mass)
         elif(decPr==6):                                                                                           
-            decPr_name = ("$\Xi'^{*-}_{b} \gamma$", xi_p_s_mass)
+            decPr_name = ("$\Xi'^{*+}_{c} \gamma$", xi_p_s_mass)
             
     elif(baryon==3 or baryon=='sigmas'):
         baryon_name = 'sigma'
         if(decPr==1):
-            decPr_name = ("$\Sigma_{b}^{+} \gamma$", sigma_mass)
+            decPr_name = ("$\Sigma_{c}^{+} \gamma$", sigma_mass)
         elif(decPr==2):
-            decPr_name = ("$\Sigma_{b}^{0} \gamma$", sigma_mass)
+            decPr_name = ("$\Sigma_{c}^{0} \gamma$", sigma_mass)
         elif(decPr==3):
-            decPr_name = ("$\Sigma_{b}^{-} \gamma$", sigma_mass)
+            decPr_name = ("$\Sigma_{c}^{-} \gamma$", sigma_mass)
         elif(decPr==4):
-            decPr_name = ("$\Lambda_{b}^{0} \gamma$", lambda_mass)
+            decPr_name = ("$\Lambda_{c}^{0} \gamma$", lambda_mass)
         elif(decPr==5):
-            decPr_name = ("$\Sigma_{b}^{*+} \gamma$", sigma_s_mass)
+            decPr_name = ("$\Sigma_{c}^{*+} \gamma$", sigma_s_mass)
         elif(decPr==6):
-            decPr_name = ("$\Sigma_{b}^{*0} \gamma$", sigma_s_mass)
+            decPr_name = ("$\Sigma_{c}^{*0} \gamma$", sigma_s_mass)
         elif(decPr==7):
-            decPr_name = ("$\Sigma_{b}^{*-} \gamma$", sigma_s_mass)
+            decPr_name = ("$\Sigma_{c}^{*-} \gamma$", sigma_s_mass)
             
     elif(baryon==4 or baryon=='lambdas'):
         baryon_name = 'lamda'
         if(decPr==1):
-            decPr_name = ("$\Lambda_{b}^{0} \gamma$", lambda_mass)
+            decPr_name = ("$\Lambda_{c}^{0} \gamma$", lambda_mass)
         elif(decPr==2):
-            decPr_name = ("$\Sigma_{b}^{0} \gamma$", sigma_s_mass)
+            decPr_name = ("$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
         elif(decPr==3):
-            decPr_name = ("$\Sigma_{b}^{*} \gamma$", sigma_mass)
+            decPr_name = ("$\Sigma_{c}^{*} \gamma$", sigma_mass)
 
     return decPr_name
 
@@ -354,12 +354,12 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
                 print(value, end='', file=f_out)
                 if (i < nstate-1): print("  &", end='', file=f_out)
         else:
-            value = round(state_decays[i])
+            value = round(state_decays[i], 3)
             value_comp = "$xx$"
             if compare and cqm_widths!=[]: value_comp = round(cqm_widths[i], 1)
             if not no_errors:
-                error_up = abs(round(errors_up[i]))
-                error_dn = abs(round(errors_dn[i]))
+                error_up = abs(round(errors_up[i], 3))
+                error_dn = abs(round(errors_dn[i], 3))
                 # print("$",value,"$", end='', file=f_out)
                 print("$",value,"_{-",error_dn, "}^{+",error_up,"}$  ", end='', file=f_out)
                 if (i < nstate-1): print("  &  ", end='', file=f_out)

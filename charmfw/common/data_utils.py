@@ -196,29 +196,29 @@ def flavor_label(baryons='omegas'):
     
 def baryon_name(baryons):
     if baryons=='omegas':
-        return "$\Omega_{b}(ssb)$"
+        return "$\Omega_{c}(ssc)$"
     elif baryons=='sigmas':
-        return "$\Sigma_{b}(nnb)$"
+        return "$\Sigma_{c}(nnc)$"
     elif baryons=='cascades':
-        return "$\Xi'_{b}(snb)$"
+        return "$\Xi'_{c}(snc)$"
     elif baryons=='cascades_anti3':
-        return "$\Xi_{b}(snb)$"
+        return "$\Xi_{c}(snc)$"
     elif baryons=='lambdas':
-        return "$\Lambda_{b}(snb)$"
+        return "$\Lambda_{c}(snc)$"
     else:
         return ''
 
 def baryon_name_plots(baryons):
     if baryons=='omegas':
-        return "$\Omega_{b}$"
+        return "$\Omega_{c}$"
     elif baryons=='sigmas':
-        return "$\Sigma_{b}$"
+        return "$\Sigma_{c}$"
     elif baryons=='cascades':
-        return "$\Xi'_{b}$"
+        return "$\Xi'_{c}$"
     elif baryons=='cascades_anti3':
-        return "$\Xi_{b}$"
+        return "$\Xi_{c}$"
     elif baryons=='lambdas':
-        return "$\Lambda_{b}$"
+        return "$\Lambda_{c}$"
     else:
         return ''
 

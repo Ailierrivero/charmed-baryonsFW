@@ -18,7 +18,7 @@ import pandas as pd
 from charmfw.common import data_utils as du
 
 
-class BottomTables:
+class CharmTables:
     """
     Class to produce latex tables containing mass and decay widths
     """
