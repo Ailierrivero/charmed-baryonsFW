@@ -278,53 +278,53 @@ def latex_decay_label(baryon, decPr):
     if(baryon==1 or baryon=='omegas'):
         baryon_name = "omega"
         if(decPr==1):
-            decPr_name = ("$\Omega_{c} \gamma$", xi_mass)
+            decPr_name = (r"$\Omega_{c} \gamma$", xi_mass)
         elif(decPr==2):                                                                         
-            decPr_name = ("$\Omega^{*}_{c} \gamma$", xi_p_mass)
+            decPr_name = (r"$\Omega^{*}_{c} \gamma$", xi_p_mass)
         else:                                                                     
-            decPr_name = ("$\Omega^{*}_{c} \gamma$", xi_p_mass)
+            decPr_name = (r"$\Omega^{*}_{c} \gamma$", xi_p_mass)
 
     elif(baryon==2 or baryon==5 or baryon=='cascades' or baryon=='cascades_anti3'):
         if(baryon==2): baryon_name = 'cas_6'
         if(baryon==5): baryon_name = 'cas_3'        
         if(decPr==1):
-            decPr_name = ("$\Xi_{c}^{0} \gamma$", xi_mass)
+            decPr_name = (r"$\Xi_{c}^{0} \gamma$", xi_mass)
         elif(decPr==2):             
-            decPr_name = ("$\Xi_{c}^{+} \gamma$", xi_mass)
+            decPr_name = (r"$\Xi_{c}^{+} \gamma$", xi_mass)
         elif(decPr==3):                                                                                           
-            decPr_name = ("$\Xi'^{0}_{c} \gamma$", xi_p_mass)
+            decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_mass)
         elif(decPr==4):                                                                                           
-            decPr_name = ("$\Xi'^{+}_{c} \gamma$", xi_p_mass)
+            decPr_name = (r"$\Xi'^{+}_{c} \gamma$", xi_p_mass)
         elif(decPr==5):                                                                                           
-            decPr_name = ("$\Xi'^{*0}_{c} \gamma$", xi_p_s_mass)
+            decPr_name = (r"$\Xi'^{*0}_{c} \gamma$", xi_p_s_mass)
         elif(decPr==6):                                                                                           
-            decPr_name = ("$\Xi'^{*+}_{c} \gamma$", xi_p_s_mass)
+            decPr_name = (r"$\Xi'^{*+}_{c} \gamma$", xi_p_s_mass)
             
     elif(baryon==3 or baryon=='sigmas'):
         baryon_name = 'sigma'
         if(decPr==1):
-            decPr_name = ("$\Sigma_{c}^{+} \gamma$", sigma_mass)
+            decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_mass)
         elif(decPr==2):
-            decPr_name = ("$\Sigma_{c}^{0} \gamma$", sigma_mass)
+            decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_mass)
         elif(decPr==3):
-            decPr_name = ("$\Sigma_{c}^{-} \gamma$", sigma_mass)
+            decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_mass)
         elif(decPr==4):
-            decPr_name = ("$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
         elif(decPr==5):
-            decPr_name = ("$\Sigma_{c}^{*+} \gamma$", sigma_s_mass)
+            decPr_name = (r"$\Sigma_{c}^{*+} \gamma$", sigma_s_mass)
         elif(decPr==6):
-            decPr_name = ("$\Sigma_{c}^{*0} \gamma$", sigma_s_mass)
+            decPr_name = (r"$\Sigma_{c}^{*0} \gamma$", sigma_s_mass)
         elif(decPr==7):
-            decPr_name = ("$\Sigma_{c}^{*-} \gamma$", sigma_s_mass)
+            decPr_name = (r"$\Sigma_{c}^{*-} \gamma$", sigma_s_mass)
             
     elif(baryon==4 or baryon=='lambdas'):
         baryon_name = 'lamda'
         if(decPr==1):
-            decPr_name = ("$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
         elif(decPr==2):
-            decPr_name = ("$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
         elif(decPr==3):
-            decPr_name = ("$\Sigma_{c}^{*} \gamma$", sigma_mass)
+            decPr_name = (r"$\Sigma_{c}^{*} \gamma$", sigma_mass)
 
     return decPr_name
 
@@ -381,27 +381,27 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
 
 def print_header_latex(name_header, name_states, compare, f_out):
     nNames = len(name_states)
-    print("\\begin{tabular}{c c c c|", end='',file=f_out)
+    print(r"\\begin{tabular}{c c c c|", end='',file=f_out)
     if compare : nNames=int(2*nNames)
     for i in range(nNames-1):
-        print("  p{1.0cm}", end='',file=f_out)        
+        print(r"  p{1.0cm}", end='',file=f_out)        
     separator = " & "
     if compare:
         nNames=int(0.5*nNames)
         separator = " && "
-        print("} \hline \hline", file=f_out)
+        print(r"} \hline \hline", file=f_out)
     else:
         # print("p{0.85cm}} \hline \hline", file=f_out) # Gamma total
-        print("} \hline \hline", file=f_out)
+        print(r"} \hline \hline", file=f_out)
         
     for i in range(nNames-1): print(name_header[i]," & ", end='',file=f_out)
-    print(name_header[nNames-1], "\\\\", file=f_out)
+    print(name_header[nNames-1], r"\\\\", file=f_out)
     for i in range(nNames-1): print(name_states[i], separator, end='',file=f_out)
-    print(name_states[nNames-1], " \\\\ \hline", file=f_out)
+    print(name_states[nNames-1], r" \\\\ \hline", file=f_out)
 
 def print_bottom_latex(baryons,f_decay):
-    print('\hline \hline', file=f_decay)
-    print('\end{tabular}', file=f_decay)
+    print(r'\hline \hline', file=f_decay)
+    print(r'\end{tabular}', file=f_decay)
     #print("\caption{Decay widths in MeV, for states: $", baryons,"$}",file=f_decay)
     #print("\label{tab:gordo}", file=f_decay)
 
@@ -435,15 +435,15 @@ def decay_masses(baryons, decPr):
 
 def baryon_symbol(baryons="omegas"):
     if baryons=="omegas":
-        return "\Omega"
+        return r"\Omega"
     elif baryons=="sigmas":
-        return "\Sigma"
+        return r"\Sigma"
     elif baryons=="lambdas":
-        return "\Lambda"
+        return r"\Lambda"
     elif baryons=="cascades":
-        return "\Xi'"
+        return r"\Xi'"
     else:
-        return "\Xi"
+        return r"\Xi"
 
 def baryon_quarks(baryons="omegas"):
     if baryons=="omegas":
