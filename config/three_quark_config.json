@@ -1,6 +1,6 @@
 {
-    "baryons":"omegas",
-    "n_events": 10,
+    "baryons":"cascades",
+    "n_events": 1000,
     "n_jobs": 5,
     "asymmetric_errors": true,
     "decay_width": false,
