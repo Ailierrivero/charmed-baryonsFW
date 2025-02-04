@@ -274,6 +274,8 @@ def asymmetric_decay_indi_error(list_array_decays):
 
         
 def latex_decay_label(baryon, decPr):
+    # test
+    decPr_name = ("TEST", xi_p_mass)
 
     if(baryon==1 or baryon=='omegas'):
         baryon_name = "omega"
@@ -358,6 +360,7 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
             value_comp = "$xx$"
             if compare and cqm_widths!=[]: value_comp = round(cqm_widths[i], 1)
             if not no_errors:
+                print(error_up, type(error_up)) #print test
                 error_up = abs(round(errors_up[i], 3))
                 error_dn = abs(round(errors_dn[i], 3))
                 # print("$",value,"$", end='', file=f_out)
@@ -399,7 +402,7 @@ def print_header_latex(name_header, name_states, compare, f_out):
     for i in range(nNames-1): print(name_states[i], separator, end='',file=f_out)
     print(name_states[nNames-1], r" \\\\ \hline", file=f_out)
 
-def print_bottom_latex(baryons,f_decay):
+def print_charm_latex(baryons,f_decay):
     print(r'\hline \hline', file=f_decay)
     print(r'\end{tabular}', file=f_decay)
     #print("\caption{Decay widths in MeV, for states: $", baryons,"$}",file=f_decay)

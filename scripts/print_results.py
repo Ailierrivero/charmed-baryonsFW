@@ -31,9 +31,9 @@ dv.paper_tables_results(run_baryons, di_three_quark='diquark', decay_width=False
 print('diquark results created')
 
 # create summary tables for 
-# dv.decay_indi_tables_results(run_baryons, decay_type="strong", asymmetric=True,
-#                              prev_params=False, workpath=workpath, batch_number=True) # change to batch_number to True
-# print('individual decays strong created')
+dv.decay_indi_tables_results(run_baryons, decay_type="strong", asymmetric=True,
+                          prev_params=False, workpath=workpath, batch_number=True) # change to batch_number to True
+print('individual decays strong created')
 
 dv.decay_indi_tables_results(run_baryons, decay_type="electro", asymmetric=True,
                              prev_params=False, workpath=workpath, batch_number=True) # change to batch_number to True
@@ -47,10 +47,10 @@ charm_tables.parameter_combined()
 charm_tables.correlation_table_three()
 charm_tables.correlation_table_di_flavor()
 
-#bottom_tables.decay_indi_table()
-charm_tables.decay_indi_table_em_err(compare=False)
-#bottom_tables.comparison_three_quark_model_table()
-
+charm_tables.decay_indi_table()
+charm_tables.decay_indi_table_em_err(compare=False, charge="zero", n_states=19, off_set=8)
+charm_tables.decay_indi_table_em_err(compare=False, charge="negative", n_states=19, off_set=8)
+charm_tables.comparison_three_quark_model_table()
 
 # plots
 # bottom_plots = BottomPlots(run_baryons, workpath=workpath)

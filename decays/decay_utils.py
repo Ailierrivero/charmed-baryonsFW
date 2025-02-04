@@ -525,7 +525,7 @@ def print_header_latex(name_header, name_states, f_out):
     for i in range(nNames-1): print(name_states[i]," & ", end='',file=f_out)
     print(name_states[nNames-1], r" \\\\ \hline", file=f_out)
 
-def print_bottom_latex(baryons,f_decay):
+def print_charm_latex(baryons,f_decay):
     print(r'\hline \hline', file=f_decay)
     print(r'\end{tabular}', file=f_decay)
     #print("\caption{Decay widths in MeV, for states: $", baryons,"$}",file=f_decay)

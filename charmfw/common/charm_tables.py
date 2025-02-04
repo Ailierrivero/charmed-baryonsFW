@@ -255,7 +255,7 @@ class CharmTables:
             wave_label =  quantum_state + du.wave_label(self.m_S_tot[i], self.m_J_tot[i], self.m_L_tot[i]) + '&' +  mass_lat + '&'
             dec.print_row_latex(self.m_mass[i], mass_decs_B, mass_decs_C, wave_label, channel_widths, errors_up, errors_dn, f_decay_indi)
 
-        dec.print_bottom_latex(baryons, f_decay_indi)
+        dec.print_charm_latex(baryons, f_decay_indi)
 
 
     def decay_indi_table_em(self, compare=False):
@@ -305,6 +305,7 @@ class CharmTables:
             n_states = 9 # we only have up to P-wave  CHECK!!
         else:
             n_states = 8 # we only have up to P-wave  CHECK!!
+            n_states = 27 # we only have up to D-wave  CHECK!! 
 
         s_wave_count,p_wave_count,d_wave_count=0,0,0
         for i in range(n_states):
@@ -344,15 +345,24 @@ class CharmTables:
             wave_label =  quantum_state + du.wave_label(self.m_S_tot[i], self.m_J_tot[i], self.m_L_tot[i]) + '&' +  mass_lat + '&'
             dec.print_row_latex(compare, self.m_mass[i], mass_decs_B, wave_label, channel_widths, errors_up, errors_dn, channel_widths_cqm, f_decay_indi)
 
-        dec.print_bottom_latex(baryons, f_decay_indi)
+        dec.print_charm_latex(baryons, f_decay_indi)
 
 
-    def decay_indi_table_em_err(self, compare=False):
+    def decay_indi_table_em_err(self, compare=False,  charge=None, n_states=0, off_set=0):
         """
         Method to save a latex table for individual strong decays with errors
         """
-        df = pd.read_csv(self.m_workpath+'/tables/decays_indi_em_'+self.m_baryons+'_summary.csv')    
-        f_decay_indi = open(self.m_workpath+'/tables/decay_indi_em_err_'+self.m_baryons+'_paper.tex', "w")
+        if charge is None:
+            charged_name = ""
+        elif charge == "negative":
+            charged_name = "_negative"
+        elif charge == "positive":
+            charged_name = "_positive"
+        elif charge == "zero":
+            charged_name = "_zero"
+        
+        df = pd.read_csv(self.m_workpath+'/tables/decays_indi_em_'+self.m_baryons+charged_name+'_summary.csv')    
+        f_decay_indi = open(self.m_workpath+'/tables/decay_indi_em_err_'+ self.m_baryons + charged_name + '_paper.tex', "w")
 
         n_decay_channels = int((len(df.columns)-8)/3)
         baryons = self.m_baryons
@@ -387,10 +397,10 @@ class CharmTables:
 
         dec.print_header_latex(name_header, name_decays, compare, f_decay_indi)
         
-        if baryons == "omegas" or baryons=="sigmas" or baryons=="cascades":            
-            n_states = 9 # we only have up to P-wave  CHECK!!
-        else:
-            n_states = 8 # we only have up to P-wave  CHECK!!
+        #if baryons == "omegas" or baryons=="sigmas" or baryons=="cascades":            
+         #   n_states = 9 # we only have up to P-wave  CHECK!!
+        #else:
+         #   n_states = 8 # we only have up to P-wave  CHECK!!
 
         s_wave_count,p_wave_count,d_wave_count=0,0,0
         for i in range(n_states):
@@ -403,30 +413,30 @@ class CharmTables:
                 errors_up.append(df['dec_up_'+str(k)][i])
                 errors_dn.append(df['dec_dn_'+str(k)][i])
 
-            if self.m_SU_tot[i] > 3 and self.m_SU_tot[i] < 3.5 : SU_tot_val = 10/3
+            if self.m_SU_tot[i+off_set] > 3 and self.m_SU_tot[i+off_set] < 3.5 : SU_tot_val = 10/3
             else: SU_tot_val = 4/3
-            quantum_state = du.name_quantum_state(self.m_baryons, self.m_J_tot[i],
-                                                  self.m_S_tot[i], self.m_L_tot[i],
-                                                  self.m_ModEx[i], SU_tot_val)
-            if self.m_HO_n[i] == 0:                
+            quantum_state = du.name_quantum_state(self.m_baryons, self.m_J_tot[i+off_set],
+                                                  self.m_S_tot[i+off_set], self.m_L_tot[i+off_set],
+                                                  self.m_ModEx[i+off_set], SU_tot_val)
+            if self.m_HO_n[i+off_set] == 0:                
                 if s_wave_count==0:
                     s_wave_count+=1
                     print('\hline', file=f_decay_indi)
                     print(" $N=0$  &  &  &  &  &  \\\ ", file=f_decay_indi)
-            elif self.m_HO_n[i] == 1:
+            elif self.m_HO_n[i+off_set] == 1:
                 if p_wave_count==0:
                     p_wave_count+=1
                     print('\hline', file=f_decay_indi)
                     print(" $N=1$  &  &  &  &  &  \\\ ", file=f_decay_indi)
-            elif self.m_HO_n[i] == 2:
+            elif self.m_HO_n[i+off_set] == 2:
                 if d_wave_count==0:
                     d_wave_count+=1
                     print('\hline', file=f_decay_indi)
                     print(" $N=2$  &  &  &  &  &  \\\ ", file=f_decay_indi)
 
-            mass_lat = str(abs(round(self.m_mass[i])))
+            mass_lat = str(abs(round(self.m_mass[i+off_set])))
             
-            parity = str(np.power(-1.0, self.m_L_tot[i]))
+            parity = str(np.power(-1.0, self.m_L_tot[i+off_set]))
             j_frac = "\\frac{1}{2}"
             if self.m_J_tot[i] == 1.5:
                 j_frac = "\\frac{3}{2}"
@@ -440,10 +450,10 @@ class CharmTables:
                 parity = "+"
                                 
             JP = "$ \\mathbf{" + j_frac + "^" + parity +"}$"
-            wave_label= "$"+baryon_symbol+'_b('+str(abs(round(self.m_mass[i])))+')$  & ' + JP + ' & ' +  quantum_state + du.wave_label(self.m_S_tot[i], self.m_J_tot[i], self.m_L_tot[i])+'&'
-            dec.print_row_latex(compare, self.m_mass[i], mass_decs_B, wave_label, channel_widths, errors_up, errors_dn, channel_widths_cqm, f_decay_indi)
-
-        dec.print_bottom_latex(baryons, f_decay_indi)
+            wave_label= "$"+baryon_symbol+'_b('+str(abs(round(self.m_mass[i+off_set])))+')$  & ' + JP + ' & ' +  quantum_state + du.wave_label(self.m_S_tot[i+off_set], self.m_J_tot[i+off_set], self.m_L_tot[i+off_set])+'&'
+            dec.print_row_latex(compare, self.m_mass[i+off_set], mass_decs_B, wave_label, channel_widths, errors_up, errors_dn, channel_widths_cqm, f_decay_indi)
+      
+        dec.print_charm_latex(baryons, f_decay_indi)
 
 
     def latex_string_value_error(self, value, decimals=2, units='Mev'):
@@ -692,8 +702,8 @@ class CharmTables:
         self.m_sampled_md1  = data_frame_di["Md1"]
         self.m_sampled_md2  = data_frame_di["Md2"]
         self.m_sampled_md3  = data_frame_di["Md3"]
-        self.m_sampled_md4  = data_frame_di["Md4"]
-        self.m_sampled_md5  = data_frame_di["Md5"]
+        self.m_sampled_md4  = data_frame_di["Md3"]
+        self.m_sampled_md5  = data_frame_di["Md3"]
         self.m_sampled_mb   = data_frame_di["MB"]
         self.m_sampled_k_di = data_frame_di["K"].pow(2).div(pow(1000,3))
         self.m_sampled_a_di = data_frame_di["A"]
@@ -747,8 +757,8 @@ class CharmTables:
 
         self.m_rho_md2md1 =   round(np.mean(data_frame['rho_md2md1']), 2)
         self.m_rho_md3md1 =   round(np.mean(data_frame['rho_md3md1']), 2)
-        self.m_rho_md4md1 =   round(np.mean(data_frame['rho_md4md1']), 2)
-        self.m_rho_md5md1 =   round(np.mean(data_frame['rho_md5md1']), 2)
+        self.m_rho_md4md1 =   round(np.mean(data_frame['rho_md2md1']), 2)
+        self.m_rho_md5md1 =   round(np.mean(data_frame['rho_md2md1']), 2)
         self.m_rho_mbmd1  =   round(np.mean(data_frame['rho_mbmd1']), 2)
         self.m_rho_kmd1   =   round(np.mean(data_frame['rho_kmd1']), 2)
         self.m_rho_amd1   =   round(np.mean(data_frame['rho_amd1']), 2)
@@ -756,35 +766,35 @@ class CharmTables:
         self.m_rho_emd1   =   round(np.mean(data_frame['rho_emd1']), 2)
         self.m_rho_gmd1   =   round(np.mean(data_frame['rho_gmd1']), 2)
         self.m_rho_md3md2 =   round(np.mean(data_frame['rho_md3md2']), 2)
-        self.m_rho_md4md2 =   round(np.mean(data_frame['rho_md4md2']), 2)
-        self.m_rho_md5md2 =   round(np.mean(data_frame['rho_md5md2']), 2)
+        self.m_rho_md4md2 =   round(np.mean(data_frame['rho_md2md1']), 2)
+        self.m_rho_md5md2 =   round(np.mean(data_frame['rho_md2md1']), 2)
         self.m_rho_mbmd2  =   round(np.mean(data_frame['rho_mbmd2']), 2)
         self.m_rho_kmd2   =   round(np.mean(data_frame['rho_kmd2']), 2)
         self.m_rho_amd2   =   round(np.mean(data_frame['rho_amd2']), 2)
         self.m_rho_bmd2   =   round(np.mean(data_frame['rho_bmd2']), 2)
         self.m_rho_emd2   =   round(np.mean(data_frame['rho_emd2']), 2)
         self.m_rho_gmd2   =   round(np.mean(data_frame['rho_gmd2']), 2)
-        self.m_rho_md4md3 =   round(np.mean(data_frame['rho_md4md3']), 2)
-        self.m_rho_md5md3 =   round(np.mean(data_frame['rho_md5md3']), 2)
+        self.m_rho_md4md3 =   round(np.mean(data_frame['rho_md2md1']), 2)
+        self.m_rho_md5md3 =   round(np.mean(data_frame['rho_md2md1']), 2)
         self.m_rho_mbmd3  =   round(np.mean(data_frame['rho_mbmd3']), 2)
         self.m_rho_kmd3   =   round(np.mean(data_frame['rho_kmd3']), 2)
         self.m_rho_amd3   =   round(np.mean(data_frame['rho_amd3']), 2)
         self.m_rho_bmd3   =   round(np.mean(data_frame['rho_bmd3']), 2)
         self.m_rho_emd3   =   round(np.mean(data_frame['rho_emd3']), 2)
         self.m_rho_gmd3   =   round(np.mean(data_frame['rho_gmd3']), 2)
-        self.m_rho_md5md4 =   round(np.mean(data_frame['rho_md5md4']), 2)
-        self.m_rho_mbmd4  =   round(np.mean(data_frame['rho_mbmd4']), 2)
-        self.m_rho_kmd4   =   round(np.mean(data_frame['rho_kmd4']), 2)
-        self.m_rho_amd4   =   round(np.mean(data_frame['rho_amd4']), 2)
-        self.m_rho_bmd4   =   round(np.mean(data_frame['rho_bmd4']), 2)
-        self.m_rho_emd4   =   round(np.mean(data_frame['rho_emd4']), 2)
-        self.m_rho_gmd4   =   round(np.mean(data_frame['rho_gmd4']), 2)
-        self.m_rho_mbmd5  =   round(np.mean(data_frame['rho_mbmd5']), 2)
-        self.m_rho_kmd5   =   round(np.mean(data_frame['rho_kmd5']), 2)
-        self.m_rho_amd5   =   round(np.mean(data_frame['rho_amd5']), 2)
-        self.m_rho_bmd5   =   round(np.mean(data_frame['rho_bmd5']), 2)
-        self.m_rho_emd5   =   round(np.mean(data_frame['rho_emd5']), 2)
-        self.m_rho_gmd5   =   round(np.mean(data_frame['rho_gmd5']), 2)
+        self.m_rho_md5md4 =   round(np.mean(data_frame['rho_md2md1']), 2)
+        self.m_rho_mbmd4  =   round(np.mean(data_frame['rho_mbmd2']), 2)
+        self.m_rho_kmd4   =   round(np.mean(data_frame['rho_kmd2']), 2)
+        self.m_rho_amd4   =   round(np.mean(data_frame['rho_amd2']), 2)
+        self.m_rho_bmd4   =   round(np.mean(data_frame['rho_bmd2']), 2)
+        self.m_rho_emd4   =   round(np.mean(data_frame['rho_emd2']), 2)
+        self.m_rho_gmd4   =   round(np.mean(data_frame['rho_gmd2']), 2)
+        self.m_rho_mbmd5  =   round(np.mean(data_frame['rho_mbmd2']), 2)
+        self.m_rho_kmd5   =   round(np.mean(data_frame['rho_kmd2']), 2)
+        self.m_rho_amd5   =   round(np.mean(data_frame['rho_amd2']), 2)
+        self.m_rho_bmd5   =   round(np.mean(data_frame['rho_bmd2']), 2)
+        self.m_rho_emd5   =   round(np.mean(data_frame['rho_emd2']), 2)
+        self.m_rho_gmd5   =   round(np.mean(data_frame['rho_gmd2']), 2)
         self.m_rho_kmb_di =   round(np.mean(data_frame['rho_kmb']), 2)
         self.m_rho_amb_di =   round(np.mean(data_frame['rho_amb']), 2)
         self.m_rho_bmb_di =   round(np.mean(data_frame['rho_bmb']), 2)
