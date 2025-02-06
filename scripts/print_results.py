@@ -49,10 +49,14 @@ charm_tables.correlation_table_di_flavor()
 
 # charm_tables.decay_indi_table()
 
-# charm_tables.decay_indi_table_em_err(compare=False, charge="zero", n_states=21, off_set=9) # cascades
-# charm_tables.decay_indi_table_em_err(compare=False, charge="negative", n_states=21, off_set=9) # cascades
-
-charm_tables.decay_indi_table_em_err(compare=False, charge="", n_states=21, off_set=9) # omegas
+if run_baryons == "cascades":
+    charm_tables.decay_indi_table_em_err(compare=False, charge="zero", n_states=21, off_set=9) # cascades
+    charm_tables.decay_indi_table_em_err(compare=False, charge="negative", n_states=21, off_set=9) # cascades
+elif run_baryons=="omegas":
+    charm_tables.decay_indi_table_em_err(compare=False, charge="", n_states=21, off_set=9) # omegas
+elif run_baryons == "sigmas":
+    charm_tables.decay_indi_table_em_err(compare=False, charge="charged", n_states=21, off_set=9)
+    charm_tables.decay_indi_table_em_err(compare=False, charge="zero", n_states=21, off_set=9)
 
 charm_tables.comparison_three_quark_model_table()
 

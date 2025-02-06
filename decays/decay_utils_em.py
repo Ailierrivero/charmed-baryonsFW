@@ -335,7 +335,6 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
     """
     Method to print a single row in latex format for the EM decays
     """
-    print(errors_up) #print test
     nstate=len(state_decays)
     no_errors = False # for no bootstrap for decay widths
     if(errors_up is None or errors_dn is None):
@@ -450,12 +449,12 @@ def baryon_symbol(baryons="omegas"):
 
 def baryon_quarks(baryons="omegas"):
     if baryons=="omegas":
-        return "ssb"
+        return "ssc"
     elif baryons=="sigmas":
-        return "nnb"
+        return "nnc"
     elif baryons=="lambdas":
-        return "nnb"
+        return "nnc"
     elif baryons=="cascades":
-        return "snb"
+        return "snc"
     else:
-        return "snb"
+        return "snc"

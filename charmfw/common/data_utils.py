@@ -231,11 +231,11 @@ def compare_mass_latex(value=-1):
 def name_quantum_state(baryons, J_tot, S_tot, L_tot, ModEx, SU_tot):
 
     if baryons=='omegas':
-        quarks = 'ssb'
+        quarks = 'ssc'
     elif baryons=='cascades' or baryons=='cascades_anti3':
-        quarks = 'snb'
+        quarks = 'snc'
     elif baryons=='lambdas' or baryons=='sigmas':
-        quarks = 'nnb'
+        quarks = 'nnc'
     else:
         quarks = 'x'
         
@@ -311,11 +311,11 @@ def name_quantum_state(baryons, J_tot, S_tot, L_tot, ModEx, SU_tot):
 def name_quantum_state_di(baryons, J_tot, S_tot, L_tot, ModEx, SU_tot):
 
     if baryons=='omegas':
-        quarks = 'ssb'
+        quarks = 'ssc'
     elif baryons=='cascades' or baryons=='cascades_anti3':
-        quarks = 'snb'
+        quarks = 'snc'
     elif baryons=='lambdas' or baryons=='sigmas':
-        quarks = 'nnb'
+        quarks = 'nnc'
     else:
         quarks = 'x'
         
