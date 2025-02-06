@@ -273,7 +273,7 @@ def asymmetric_decay_indi_error(list_array_decays):
     return indi_up, indi_dn
 
         
-def latex_decay_label(baryon, decPr):
+def latex_decay_label(baryon, decPr, charge=None):
     # test
     decPr_name = ("TEST", xi_p_mass)
 
@@ -331,6 +331,17 @@ def latex_decay_label(baryon, decPr):
     return decPr_name
 
 
+def notation_spect(baryon, decPr, charge=None):
+    notation = "spec"
+    
+    return notation
+
+def round_custom(number, round_number):
+    if round_number==0:
+        return round(number)
+    else:
+        return round(number, round_number)
+
 def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_up, errors_dn, cqm_widths, f_out):
     """
     Method to print a single row in latex format for the EM decays
@@ -356,12 +367,14 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
                 print(value, end='', file=f_out)
                 if (i < nstate-1): print("  &", end='', file=f_out)
         else:
-            value = round(state_decays[i], 3)
+            round_number = 1
+            if state_decays[i]>=5 : round_number = 0
+            value = round_custom(state_decays[i], round_number)
             value_comp = "$xx$"
             if compare and cqm_widths!=[]: value_comp = round(cqm_widths[i], 1)
             if not no_errors:
-                error_up = abs(round(errors_up[i], 3))
-                error_dn = abs(round(errors_dn[i], 3))
+                error_up = abs(round_custom(errors_up[i], round_number))
+                error_dn = abs(round_custom(errors_dn[i], round_number))
                 # print("$",value,"$", end='', file=f_out)
                 print("$",value,"_{-",error_dn, "}^{+",error_up,"}$  ", end='', file=f_out)
                 if (i < nstate-1): print("  &  ", end='', file=f_out)
