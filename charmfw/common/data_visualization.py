@@ -77,7 +77,7 @@ def paper_tables_results(baryons, di_three_quark='diquark', decay_width=False,
     n_states  = len(masses_df.columns)
     n_samples = len(masses_df.index)
 
-    print(n_samples, di_label)
+    print(n_samples, di_label) # print test
     baryons_name = baryons
     if prev_params: baryons_name+='_previous'
     if di_three_quark=='diquark': di_label='diquark_'
@@ -153,7 +153,7 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
     #f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_summary.csv', "w")    
     state,sum_mass,J_tot,S_tot,L_tot,I_tot,SU_tot,HO_n,SL,ModEx = cs.states_mass(baryons)
 
-    #if baryons == "omegas" or baryons=="sigmas" or baryons=="cascades":            
+    #if baryons == "omegas" or baryons=="sigmas" or baryons=="cascades"
     f_indi_charged = []
     if decay_type=="strong":
         f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_summary.csv', "w")
@@ -163,6 +163,9 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
             f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_zero_summary.csv', "w")
             f_indi_charged.append(f_indi)
             f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_negative_summary.csv', "w")
+            f_indi_charged.append(f_indi)
+        if baryons=="omegas":
+            f_indi = open(workpath+'/tables/decays_indi_'+decay_name+second_name+baryons_name+'_summary.csv', "w")
             f_indi_charged.append(f_indi)
             
     for i in range(len(state)-corr_em):
@@ -180,18 +183,19 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
         if decay_type=="strong":
             charged_separated.append(decay_indi_df)
         elif decay_type=="electro" and (baryons=="cascades" or baryons=="cascades_anti3"):
-           print(decay_indi_df.head()) #print test
-           decay_indi_em_zero = decay_indi_df[["0_channel", "2_channel", "3_channel", "6_channel", "7_channel", "8_channel", "9_channel", "10_channel", "11_channel", "12_channel", "20_channel", "21_channel", "22_channel", "23_channel", "24_channel", "25_channel", "26_channel"]]
-           charged_separated.append(decay_indi_em_zero)
-           decay_indi_em_neg = decay_indi_df[["1_channel", "4_channel", "5_channel", "13_channel", "14_channel", "15_channel", "16_channel", "17_channel", "18_channel", "19_channel", "27_channel", "28_channel", "29_channel", "30_channel", "31_channel", "32_channel", "33_channel"]]
-           charged_separated.append(decay_indi_em_neg)
-        
-        for ch in range(len(charged_separated)):   
-
-            n_channels  = len(decay_indi_df.columns)
-            n_samples   = len(decay_indi_df.index)
-            # print(n_channels, n_samples)
             # input()
+            decay_indi_em_zero = decay_indi_df[["0_channel", "2_channel", "3_channel", "6_channel", "7_channel", "8_channel", "9_channel", "10_channel", "11_channel", "12_channel", "20_channel", "21_channel", "22_channel", "23_channel", "24_channel", "25_channel", "26_channel"]]
+            charged_separated.append(decay_indi_em_zero)
+            decay_indi_em_neg = decay_indi_df[["1_channel", "4_channel", "5_channel", "13_channel", "14_channel", "15_channel", "16_channel", "17_channel", "18_channel", "19_channel", "27_channel", "28_channel", "29_channel", "30_channel", "31_channel", "32_channel", "33_channel"]]
+            charged_separated.append(decay_indi_em_neg)
+        elif decay_type=="electro" and baryons=="omegas":
+            charged_separated.append(decay_indi_df)
+
+            
+        for ch in range(len(charged_separated)):
+
+            n_channels  = len(charged_separated[ch].columns)
+            n_samples   = len(charged_separated[ch].index)
             quantile_dn = int(n_samples*0.025)#1587)   #int(np.floor(N*0.1587))
             quantile_up = int(n_samples*0.975)#8413)+1 #int(np.floor(N*0.8413))
             
@@ -200,6 +204,7 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
                 for k in range(n_channels):
                     decays_header+='decay_'+str(k)+',dec_up_'+str(k)+',dec_dn_'+str(k)+','
                 print(decays_header+'dec_tot,dec_tot_up,dec_tot_dn,J_tot,S_tot,L_tot,SU_tot,ModEx,HO_n', file=f_indi_charged[ch])
+                
             decays_value = ''
             total_decay, total_decay_up, total_decay_dn = 0,0,0
             column_names = list(charged_separated[ch].columns)

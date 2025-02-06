@@ -335,6 +335,7 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
     """
     Method to print a single row in latex format for the EM decays
     """
+    print(errors_up) #print test
     nstate=len(state_decays)
     no_errors = False # for no bootstrap for decay widths
     if(errors_up is None or errors_dn is None):
@@ -360,7 +361,6 @@ def print_row_latex(compare, mass_a, masses_b, state_name, state_decays, errors_
             value_comp = "$xx$"
             if compare and cqm_widths!=[]: value_comp = round(cqm_widths[i], 1)
             if not no_errors:
-                print(error_up, type(error_up)) #print test
                 error_up = abs(round(errors_up[i], 3))
                 error_dn = abs(round(errors_dn[i], 3))
                 # print("$",value,"$", end='', file=f_out)

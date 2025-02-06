@@ -267,7 +267,7 @@ class CharmTables:
             df_compare = pd.read_csv(self.m_workpath+'/tables/cqm_decays_indi_em_'+self.m_baryons+'_summary.csv')
             
         f_decay_indi = open(self.m_workpath+'/tables/decay_indi_em_'+self.m_baryons+'_paper.tex', "w")
-        n_decay_channels = int((len(df.columns)-8)/3)
+        n_decay_channels = int((len(df.columns)-9)/3)
         baryons = self.m_baryons
 
         flavor = "$\\mathcal{F}={\\bf {6}}_{\\rm f}$ " # omegas, sigmas, cascades
@@ -305,7 +305,7 @@ class CharmTables:
             n_states = 9 # we only have up to P-wave  CHECK!!
         else:
             n_states = 8 # we only have up to P-wave  CHECK!!
-            n_states = 27 # we only have up to D-wave  CHECK!! 
+            n_states = 27 # we only have up to D-wave  CHECK!!
 
         s_wave_count,p_wave_count,d_wave_count=0,0,0
         for i in range(n_states):
@@ -352,7 +352,7 @@ class CharmTables:
         """
         Method to save a latex table for individual strong decays with errors
         """
-        if charge is None:
+        if charge is None or charge=="":
             charged_name = ""
         elif charge == "negative":
             charged_name = "_negative"
@@ -364,7 +364,7 @@ class CharmTables:
         df = pd.read_csv(self.m_workpath+'/tables/decays_indi_em_'+self.m_baryons+charged_name+'_summary.csv')    
         f_decay_indi = open(self.m_workpath+'/tables/decay_indi_em_err_'+ self.m_baryons + charged_name + '_paper.tex', "w")
 
-        n_decay_channels = int((len(df.columns)-8)/3)
+        n_decay_channels = int((len(df.columns)-9)/3)
         baryons = self.m_baryons
 
         flavor = "$\\mathcal{F}={\\bf {6}}_{\\rm f}$ " # omegas, sigmas, cascades
@@ -373,7 +373,7 @@ class CharmTables:
 
         from decays import decay_utils_em as dec
         baryon_symbol = dec.baryon_symbol(baryons)
-        baryon_quarks = "$" + baryon_symbol + "_b(" + dec.baryon_quarks(baryons) + ")$"
+        baryon_quarks = "$" + baryon_symbol + "_c(" + dec.baryon_quarks(baryons) + ")$"
 
         name_header=[]
         name_decays=[]
@@ -408,10 +408,14 @@ class CharmTables:
             channel_widths_cqm = []
             errors_up = []
             errors_dn = []
+            print(df.head()) # print test
             for k in range(n_decay_channels):
+                print(df['dec_up_'+str(k)][i], k, i)
                 channel_widths.append(df['decay_'+str(k)][i])
                 errors_up.append(df['dec_up_'+str(k)][i])
                 errors_dn.append(df['dec_dn_'+str(k)][i])
+
+            
 
             if self.m_SU_tot[i+off_set] > 3 and self.m_SU_tot[i+off_set] < 3.5 : SU_tot_val = 10/3
             else: SU_tot_val = 4/3
@@ -451,6 +455,8 @@ class CharmTables:
                                 
             JP = "$ \\mathbf{" + j_frac + "^" + parity +"}$"
             wave_label= "$"+baryon_symbol+'_b('+str(abs(round(self.m_mass[i+off_set])))+')$  & ' + JP + ' & ' +  quantum_state + du.wave_label(self.m_S_tot[i+off_set], self.m_J_tot[i+off_set], self.m_L_tot[i+off_set])+'&'
+
+            print(errors_up)
             dec.print_row_latex(compare, self.m_mass[i+off_set], mass_decs_B, wave_label, channel_widths, errors_up, errors_dn, channel_widths_cqm, f_decay_indi)
       
         dec.print_charm_latex(baryons, f_decay_indi)
@@ -812,7 +818,7 @@ class CharmTables:
         self.m_rho_ge_di  =   round(np.mean(data_frame['rho_ge']), 2)
 
     def m_load_data_compare(self, baryons):
-        data_frame = pd.read_csv(self.m_workpath+"/bottomfw/data/three_quark_comp/masses_" + baryons + "_compare.csv")
+        data_frame = pd.read_csv(self.m_workpath+"/charmfw/data/three_quark_comp/masses_" + baryons + "_compare.csv")
         self.m_mass_ysh  = round(data_frame["Yoshida"])
         self.m_mass_hsk  = round(data_frame["Hosaka"])
         self.m_mass_rob  = round(data_frame["Roberts"])
