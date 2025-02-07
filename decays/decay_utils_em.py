@@ -284,40 +284,173 @@ def latex_decay_label(baryon, decPr, charge=None):
         elif(decPr==2):                                                                         
             decPr_name = (r"$\Omega^{*}_{c} \gamma$", xi_p_mass)
         else:                                                                     
-            decPr_name = (r"$\Omega^{*}_{c} \gamma$", xi_p_mass)
+            decPr_name = (r"$\Omega_{c} \gamma$", xi_p_mass)
 
     elif(baryon==2 or baryon==5 or baryon=='cascades' or baryon=='cascades_anti3'):
         if(baryon==2): baryon_name = 'cas_6'
         if(baryon==5): baryon_name = 'cas_3'        
-        if(decPr==1):
-            decPr_name = (r"$\Xi_{c}^{0} \gamma$", xi_mass)
-        elif(decPr==2):             
-            decPr_name = (r"$\Xi_{c}^{+} \gamma$", xi_mass)
-        elif(decPr==3):                                                                                           
-            decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_mass)
-        elif(decPr==4):                                                                                           
-            decPr_name = (r"$\Xi'^{+}_{c} \gamma$", xi_p_mass)
-        elif(decPr==5):                                                                                           
-            decPr_name = (r"$\Xi'^{*0}_{c} \gamma$", xi_p_s_mass)
-        elif(decPr==6):                                                                                           
-            decPr_name = (r"$\Xi'^{*+}_{c} \gamma$", xi_p_s_mass)
+        if charge == None:
+            if(decPr==1):
+                decPr_name = (r"$\Xi_{c}^{0} \gamma$", xi_mass)
+            elif(decPr==2):             
+                decPr_name = (r"$\Xi_{c}^{-} \gamma$", xi_mass)
+            elif(decPr==3):                                                                                           
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_mass)
+            elif(decPr==4):                                                                                           
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_mass)
+            elif(decPr==5):                                                                                           
+                decPr_name = (r"$\Xi'^{*0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==6):                                                                                           
+                decPr_name = (r"$\Xi'^{*-}_{c} \gamma$", xi_p_s_mass)
+        elif charge == "zero":
+            if(decPr==1):
+                decPr_name = (r"$\Xi_{c}^{0} \gamma$", xi_mass)
+            elif(decPr==2):                                                                                           
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_mass)
+            elif(decPr==3):                                                                                   
+                decPr_name = (r"$\Xi^{*0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==4):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==5):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==6):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==7):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==8):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==9):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==10):
+                decPr_name = (r"$\Xi^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==11):
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==12):                                                                                           
+                decPr_name = (r"$\Xi^{*0}_{c} \gamma$", xi_p_mass)
+            elif(decPr==13):
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==14):                                                                     
+                decPr_name = (r"$\Xi^{*0}_{c} \gamma$", xi_p_mass)
+            elif(decPr==15):                                                                     
+                decPr_name = (r"$\Xi^{*0}_{c} \gamma$", xi_p_mass)
+            elif(decPr==16):
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==17):
+                decPr_name = (r"$\Xi'^{0}_{c} \gamma$", xi_p_s_mass)
+        elif charge == "negative":
+            if(decPr==1):
+                decPr_name = (r"$\Xi_{c}^{-} \gamma$", xi_mass)
+            elif(decPr==2):                                                                                           
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_mass)
+            elif(decPr==3):                                                                                   
+                decPr_name = (r"$\Xi^{*-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==4):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==5):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==6):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==7):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==8):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==9):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==10):
+                decPr_name = (r"$\Xi^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==11):
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==12):                                                                                           
+                decPr_name = (r"$\Xi^{*-}_{c} \gamma$", xi_p_mass)
+            elif(decPr==13):
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==14):                                                                     
+                decPr_name = (r"$\Xi^{*-}_{c} \gamma$", xi_p_mass)
+            elif(decPr==15):                                                                     
+                decPr_name = (r"$\Xi^{*-}_{c} \gamma$", xi_p_mass)
+            elif(decPr==16):
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_s_mass)
+            elif(decPr==17):
+                decPr_name = (r"$\Xi'^{-}_{c} \gamma$", xi_p_s_mass)
             
     elif(baryon==3 or baryon=='sigmas'):
         baryon_name = 'sigma'
-        if(decPr==1):
-            decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_mass)
-        elif(decPr==2):
-            decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_mass)
-        elif(decPr==3):
-            decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_mass)
-        elif(decPr==4):
-            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
-        elif(decPr==5):
-            decPr_name = (r"$\Sigma_{c}^{*+} \gamma$", sigma_s_mass)
-        elif(decPr==6):
-            decPr_name = (r"$\Sigma_{c}^{*0} \gamma$", sigma_s_mass)
-        elif(decPr==7):
-            decPr_name = (r"$\Sigma_{c}^{*-} \gamma$", sigma_s_mass)
+        if charge == "charged":
+            if(decPr==1):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==2):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==3):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==4):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==5):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==6):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==7):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==8):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==9):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==10):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==11):
+                decPr_name = (r"$\Sigma_{c}^{+} \gamma$", sigma_s_mass)
+            elif(decPr==12):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==13):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==14):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass) 
+            elif(decPr==15):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==16):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==17):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+            elif(decPr==18):
+                decPr_name = (r"$\Sigma_{c}^{-} \gamma$", sigma_s_mass)
+
+        elif charge == "zero":
+            if(decPr==1):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            elif(decPr==2):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            elif(decPr==3):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==4):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==5):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==6):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==7):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==8):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==9):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            elif(decPr==10):
+                decPr_name = (r"$\Lambda_{c}^{0} \gamma$", lambda_mass)
+            if(decPr==11):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            if(decPr==12):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass) 
+            if(decPr==13):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            if(decPr==14):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            if(decPr==15):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            if(decPr==16):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+            if(decPr==17):
+                decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
+    
+        
+            
             
     elif(baryon==4 or baryon=='lambdas'):
         baryon_name = 'lamda'
@@ -327,17 +460,171 @@ def latex_decay_label(baryon, decPr, charge=None):
             decPr_name = (r"$\Sigma_{c}^{0} \gamma$", sigma_s_mass)
         elif(decPr==3):
             decPr_name = (r"$\Sigma_{c}^{*} \gamma$", sigma_mass)
-
+        elif(decPr==4):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==5):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==6):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==7):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==8):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==9):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==10):
+            decPr_name = (r"$\Lambda_{c}^{0} \gamma$", sigma_mass)
+        elif(decPr==11):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==12):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==13):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==14):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==15):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==16):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)
+        elif(decPr==17):
+            decPr_name = (r"$\Sigma_{c} \gamma$", sigma_mass)  
     return decPr_name
 
 
 def notation_spect(baryon, decPr, charge=None):
-    notation = "spec"
-    
+    notation = "keV"
+    if baryon == "cascades" or baryon=="cascades_anti3" or baryon=="lambdas":
+        if(decPr==1):
+            notation = r"$^2S_{1/2}$"
+        elif(decPr==2):
+            notation = r"$^2S_{1/2}$"
+        elif(decPr==3):
+            notation = r"$^4S_{3/2}$"
+        elif(decPr==4):
+            notation = r"$^2_{\lambda}P_{1/2}$"
+        elif(decPr==5):
+            notation = r"$^2_{\lambda}P_{3/2}$"
+        elif(decPr==6):
+            notation = r"$^2_{\rho}P_{1/2}$"
+        elif(decPr==7):
+            notation = r"$^4_{\rho}P_{1/2}$"
+        elif(decPr==8):
+            notation = r"$^2_{\rho}P_{3/2}$"
+        elif(decPr==9):
+            notation = r"$^4_{\rho}P_{3/2}$"
+        elif(decPr==10):
+            notation = r"$^4_{\rho}P_{5/2}$"
+        elif(decPr==11):
+            notation = r"$^2_{\lambda}P_{1/2}$"
+        elif(decPr==12):
+            notation = r"$^4_{\lambda}P_{1/2}$"
+        elif(decPr==13):
+            notation = r"$^2_{\lambda}P_{3/2}$"
+        elif(decPr==14):
+            notation = r"$^4_{\lambda}P_{3/2}$"
+        elif(decPr==15):
+            notation = r"$^4_{\lambda}P_{5/2}$"
+        elif(decPr==16):
+            notation = r"$^2_{\rho}P_{1/2}$"
+        elif(decPr==17):
+            notation = r"$^2_{\rho}P_{3/2}$"
+    if baryon=="omegas":
+        if(decPr==1):
+            notation = r"$^2S_{1/2}$"
+        elif(decPr==2):
+            notation = r"$^4S_{3/2}$"
+        elif(decPr==3):
+            notation = r"$^2_{\lambda}P_{1/2}$"
+        elif(decPr==4):
+            notation = r"$^4_{\lambda}P_{1/2}$"
+        elif(decPr==5):
+            notation = r"$^2_{\lambda}P_{3/2}$"
+        elif(decPr==6):
+            notation = r"$^4_{\lambda}P_{3/2}$"
+        elif(decPr==7):
+            notation = r"$^4_{\lambda}P_{5/2}$"
+        elif(decPr==8):
+            notation = r"$^2_{\rho}P_{1/2}$"
+        elif(decPr==9):
+            notation = r"$^2_{\rho}P_{3/2}$"
+
+    if baryon=="sigmas":
+        if charge == "zero":
+            if(decPr==1):
+                notation = r"$^2S_{1/2}$"
+            elif(decPr==2):
+                notation = r"$^4S_{3/2}$"
+            elif(decPr==3):
+                notation = r"$^2S_{1/2}$"
+            elif(decPr==4):
+                notation = r"$^2_{\lambda}P_{1/2}$"
+            elif(decPr==5):
+                notation = r"$^4_{\lambda}P_{1/2}$"
+            elif(decPr==6):
+                notation = r"$^2_{\lambda}P_{3/2}$"
+            elif(decPr==7):
+                notation = r"$^4_{\lambda}P_{3/2}$"
+            elif(decPr==8):
+                notation = r"$^4_{\lambda}P_{5/2}$"
+            elif(decPr==9):
+                notation = r"$^2_{\rho}P_{1/2}$"
+            elif(decPr==10):
+                notation = r"$^2_{\rho}P_{3/2}$"
+            elif(decPr==11):
+                notation = r"$^2_{\lambda}P_{1/2}$"
+            elif(decPr==12):
+                notation = r"$^4_{\lambda}P_{1/2}$"
+            elif(decPr==13):
+                notation = r"$^2_{\lambda}P_{3/2}$"
+            elif(decPr==14):
+                notation = r"$^4_{\lambda}P_{3/2}$"
+            elif(decPr==15):
+                notation = r"$^4_{\lambda}P_{5/2}$"
+            elif(decPr==16):
+                notation = r"$^2_{\rho}P_{1/2}$"
+            elif(decPr==17):
+                notation = r"$^2_{\rho}P_{3/2}$"
+        elif charge == "charged":
+            if(decPr==1):
+                notation = r"$^2S_{1/2}$"
+            elif(decPr==2):
+                notation = r"$^4S_{3/2}$"
+            if(decPr==3):
+                notation = r"$^2S_{1/2}$"
+            elif(decPr==4):
+                notation = r"$^4S_{3/2}$"
+            elif(decPr==5):
+                notation = r"$^2_{\lambda}P_{1/2}$"
+            elif(decPr==6):
+                notation = r"$^4_{\lambda}P_{1/2}$"
+            elif(decPr==7):
+                notation = r"$^2_{\lambda}P_{3/2}$"
+            elif(decPr==8):
+                notation = r"$^4_{\lambda}P_{3/2}$"
+            elif(decPr==9):
+                notation = r"$^4_{\lambda}P_{5/2}$"
+            elif(decPr==10):
+                notation = r"$^2_{\rho}P_{1/2}$"
+            elif(decPr==11):
+                notation = r"$^2_{\rho}P_{3/2}$"
+            elif(decPr==12):
+                notation = r"$^2_{\lambda}P_{1/2}$"
+            elif(decPr==13):
+                notation = r"$^4_{\lambda}P_{1/2}$"
+            elif(decPr==14):
+                notation = r"$^2_{\lambda}P_{3/2}$"
+            elif(decPr==15):
+                notation = r"$^4_{\lambda}P_{3/2}$"
+            elif(decPr==16):
+                notation = r"$^4_{\lambda}P_{5/2}$"
+            elif(decPr==17):
+                notation = r"$^2_{\rho}P_{1/2}$"
+            elif(decPr==18):
+                notation = r"$^2_{\rho}P_{3/2}$"        
     return notation
 
 def round_custom(number, round_number):
-    if round_number==0:
+    if round_number ==0:
         return round(number)
     else:
         return round(number, round_number)

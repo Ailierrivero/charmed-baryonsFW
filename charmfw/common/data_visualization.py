@@ -189,9 +189,9 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
             decay_indi_em_neg = decay_indi_df[["1_channel", "4_channel", "5_channel", "13_channel", "14_channel", "15_channel", "16_channel", "17_channel", "18_channel", "19_channel", "27_channel", "28_channel", "29_channel", "30_channel", "31_channel", "32_channel", "33_channel"]]
             charged_separated.append(decay_indi_em_neg)
         elif decay_type=="electro" and baryons=="sigmas":
-            decay_indi_em_zero = decay_indi_df[["9_channel","10_channel", "11_channel","12_channel","13_channel","14_channel","15_channel","16_channel","17_channel","27_channel","28_channel","29_channel","30_channel","31_channel","32_channel","33_channel","34_channel"]]
+            decay_indi_em_zero = decay_indi_df[["2_channel","3_channel", "6_channel","14_channel","15_channel","16_channel","17_channel","18_channel","19_channel","20_channel","28_channel","29_channel","30_channel","31_channel","32_channel","33_channel","34_channel"]]
             charged_separated.append(decay_indi_em_zero)
-            decay_indi_em_char = decay_indi_df[["0_channel","1_channel","2_channel","3_channel","4_channel","5_channel","6_channel","7_channel","8_channel","18_channel","19_channel","20_channel","21_channel","22_channel","23_channel","24_channel","25_channel", "26_channel"]]
+            decay_indi_em_char = decay_indi_df[["0_channel","1_channel","4_channel","5_channel","7_channel","8_channel","9_channel","10_channel","11_channel","12_channel","13_channel","21_channel", "22_channel", "23_channel", "24_channel", "25_channel", "26_channel", "27_channel"]]
             charged_separated.append(decay_indi_em_char)
         elif decay_type=="electro" and baryons=="omegas":
             charged_separated.append(decay_indi_df)
