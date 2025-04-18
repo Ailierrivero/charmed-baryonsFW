@@ -363,7 +363,7 @@ class CharmTables:
         elif charge == "charged":
             charged_name = "_charged"
         
-        df = pd.read_csv(self.m_workpath+'/tables/decays_indi_em_'+self.m_baryons+charged_name+'_summary.csv')    
+        df = pd.read_csv(self.m_workpath+'/tables/decays_indi_em_'+self.m_baryons+charged_name+'_summary.csv')
         f_decay_indi = open(self.m_workpath+'/tables/decay_indi_em_err_'+ self.m_baryons + charged_name + '_paper.tex', "w")
 
         n_decay_channels = int((len(df.columns)-9)/3)
