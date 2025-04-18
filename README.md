@@ -1,4 +1,3 @@
-# Hola Emma
 # Charmed baryons decay widths and mass spectra
 
 Code to compute charmed baryon spectra and decay widths. A fit is performed to obtain the model parameters. Errors are propagated via bootstrap Monte Carlo Gaussian sampling.
