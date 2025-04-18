@@ -142,7 +142,7 @@ def decay_indi_tables_results(baryons, decay_type="strong", asymmetric=False, pr
     elif decay_type=="electro":
         decay_name = "em"
         second_name = "_"
-        corr_em = 9
+        corr_em = 0
     
     baryons_name = baryons
     if not os.path.exists(workpath+"/tables/"):
